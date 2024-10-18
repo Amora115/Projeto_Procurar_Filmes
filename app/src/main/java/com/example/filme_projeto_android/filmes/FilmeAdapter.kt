@@ -1,25 +1,26 @@
-package com.example.filme_projeto_android.filmes
+import com.example.filme_projeto_android.filmes.FilmesData
 
-class FilmeAdapter(private val filmes: List<Filme>) : RecyclerView.Adapter<FilmeAdapter.FilmeViewHolder>() {
+class FilmesAdapter(private val movies: List<FilmesData>) : RecyclerView.Adapter<FilmesAdapter.MovieViewHolder>() {
 
-    class FilmeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tituloFilme: TextView = view.findViewById(R.id.tituloFilme)
-        val descricaoFilme: TextView = view.findViewById(R.id.descricaoFilme)
+    inner class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val imageViewMoviePoster: ImageView = itemView.findViewById(R.id.imageViewMoviePoster)
+        val textViewMovieTitle: TextView = itemView.findViewById(R.id.textViewMovieTitle)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmeViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_filme, parent, false)
-        return FilmeViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
+        return MovieViewHolder(view)
     }
-    /* incompleto */
 
-    override fun onBindViewHolder(holder: FilmeViewHolder, position: Int) {
-        val filme = filmes[position]
-        holder.tituloFilme.text = filme.titulo
-        holder.descricaoFilme.text = filme.descricao
+    override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
+        val movie = movies[position]
+        holder.textViewMovieTitle.text = movie.title
+        Glide.with(holder.itemView.context)
+            .load("https://image.tmdb.org/t/p/w500${movie.poster_path}")
+            .into(holder.imageViewMoviePoster)
     }
 
     override fun getItemCount(): Int {
-        return filmes.size
+        return movies.size
     }
 }
