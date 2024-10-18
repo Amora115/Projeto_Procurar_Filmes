@@ -6,4 +6,7 @@
     <color name="pink">#ff00ff</color>
     <color name="red">#e30c14</color>
     <color name="darkRed">#91070c</color>
+
+    <color name="purple">#6200EE</color>
+    <color name="light_blue">#03DAC5</color>
 </resources>

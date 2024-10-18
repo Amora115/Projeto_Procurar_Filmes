@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.filme_projeto_android"
+    namespace = "com.example.contactos_whatsapp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.filme_projeto_android"
-        minSdk = 24
+        applicationId = "com.example.contactos_whatsapp"
+        minSdk = 27
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -42,22 +42,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.espresso.core)
-    implementation(libs.androidx.espresso.core)
-    implementation(libs.androidx.espresso.core)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation(libs.okhttp)
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.google.code.gson:gson:2.8.8")
-    implementation("com.squareup.okhttp3:okhttp:4.10.0")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.github.bumptech.glide:glide:4.12.0")
-    implementation("androidx.datastore:datastore-preferences:1.0.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
-
-
-
 }
