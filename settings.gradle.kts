@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Filme_Projeto_Android"
 include(":app")
- 
+include(":app:contactos_whatsapp")
